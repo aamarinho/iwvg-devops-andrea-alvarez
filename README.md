@@ -5,3 +5,4 @@
 ## Estado del código
 [![Build Status](https://travis-ci.org/aamarinho/iwvg-devops-andrea-alvarez.svg?branch=develop)](https://travis-ci.org/aamarinho/iwvg-devops-andrea-alvarez)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=es.upm.miw%3Aiwvg-devops-andrea-alvarez&metric=alert_status)](https://sonarcloud.io/dashboard?id=es.upm.miw%3Aiwvg-devops-andrea-alvarez)
+[![BCH compliance](https://bettercodehub.com/edge/badge/aamarinho/iwvg-devops-andrea-alvarez?branch=develop)](https://bettercodehub.com/)
