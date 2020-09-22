@@ -59,6 +59,38 @@ public class Fraction {
         return (double) numerator / denominator;
     }
 
+    public boolean isProper(){
+        return this.getNumerator() < this.getDenominator();
+    }
+
+    public boolean isImproper(){
+        return this.getNumerator() > this.getDenominator();
+    }
+
+    public boolean isEquivalent(Fraction f){
+        return this.getNumerator() * f.getDenominator() == this.getDenominator() * f.getNumerator();
+    }
+
+    public Fraction add(Fraction f){
+        int denominator=this.getDenominator()*f.getDenominator();
+        int numerator1=(denominator/this.getDenominator())*this.getNumerator();
+        int numerator2=(denominator/f.getDenominator())*f.getNumerator();
+        return new Fraction(numerator1+numerator2,denominator);
+    }
+
+    public Fraction multiply(Fraction f) {
+        return new Fraction(f.getNumerator() * this.getNumerator(), f.getDenominator() * this.getDenominator());
+    }
+
+    public Fraction divide(Fraction f) {
+        return new Fraction(f.getDenominator()* this.getNumerator(),f.getNumerator()* this.getDenominator());
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return this.getNumerator()==((Fraction)obj).getNumerator() && this.getDenominator()==((Fraction)obj).getDenominator();
+    }
+
     @Override
     public String toString() {
         return "Fraction{" +
