@@ -19,6 +19,18 @@ class FractionTest {
     }
 
     @Test
+    void testGetNumerator(){
+        assertEquals(2,fraction.getNumerator());
+        assertEquals(1,fraction2.getNumerator());
+    }
+
+    @Test
+    void testGetDenominator(){
+        assertEquals(5,fraction.getDenominator());
+        assertEquals(3,fraction2.getDenominator());
+    }
+
+    @Test
     void testIsProper(){
         assertTrue(fraction.isProper());
     }
@@ -55,6 +67,7 @@ class FractionTest {
     void testEquals(){
         assertEquals(fraction2, fraction3);
         assertNotEquals(fraction2, fraction);
+        assertNotEquals(null, fraction);
     }
 
     @Test
