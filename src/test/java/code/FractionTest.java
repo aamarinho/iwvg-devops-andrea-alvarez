@@ -6,14 +6,16 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class FractionTest {
+class FractionTest {
     private Fraction fraction;
     private Fraction fraction2;
+    private Fraction fraction3;
 
     @BeforeEach
     void before(){
         fraction = new Fraction(2,5);
         fraction2 = new Fraction(1,3);
+        fraction3 = new Fraction(1,3);
     }
 
     @Test
@@ -29,7 +31,7 @@ public class FractionTest {
     @Test
     void testIsEquivalent(){
         assertFalse(fraction.isEquivalent(fraction2));
-        assertTrue(fraction.isEquivalent(fraction));
+        assertTrue(fraction2.isEquivalent(fraction3));
     }
 
     @Test
@@ -49,5 +51,25 @@ public class FractionTest {
         assertEquals(new Fraction(5,6),fraction2.divide(fraction));
     }
 
+    @Test
+    void testEquals(){
+        assertEquals(fraction2, fraction3);
+        assertNotEquals(fraction2, fraction);
+    }
+
+    @Test
+    void testHashcode(){
+        assertEquals(fraction2.hashCode(),fraction3.hashCode());
+        assertNotEquals(fraction2.hashCode(),fraction.hashCode());
+    }
+
+    @Test
+    void testToString(){
+        String temp= "Fraction{" +
+                "numerator=" + fraction.getNumerator() +
+                ", denominator=" + fraction.getDenominator() +
+                '}';
+        assertEquals(temp,fraction.toString());
+    }
 
 }
