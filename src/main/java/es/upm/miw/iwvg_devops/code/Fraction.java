@@ -91,8 +91,7 @@ public class Fraction {
         if(obj==null){
             return false;
         }
-        return this.getNumerator()==((Fraction)obj).getNumerator() &&
-                this.getDenominator()==((Fraction)obj).getDenominator();
+        return this.hashCode()==obj.hashCode();
     }
 
     @Override
