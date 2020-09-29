@@ -72,10 +72,10 @@ public class Fraction {
     }
 
     public Fraction add(Fraction f){
-        int denominator=this.getDenominator()*f.getDenominator();
-        int numerator1=(denominator/this.getDenominator())*this.getNumerator();
-        int numerator2=(denominator/f.getDenominator())*f.getNumerator();
-        return new Fraction(numerator1+numerator2,denominator);
+        int denominatorAux=this.getDenominator()*f.getDenominator();
+        int numerator1=(denominatorAux/this.getDenominator())*this.getNumerator();
+        int numerator2=(denominatorAux/f.getDenominator())*f.getNumerator();
+        return new Fraction(numerator1+numerator2,denominatorAux);
     }
 
     public Fraction multiply(Fraction f) {
@@ -88,7 +88,16 @@ public class Fraction {
 
     @Override
     public boolean equals(Object obj) {
-        return this.getNumerator()==((Fraction)obj).getNumerator() && this.getDenominator()==((Fraction)obj).getDenominator();
+        if(obj==null){
+            return false;
+        }
+        return this.getNumerator()==((Fraction)obj).getNumerator() &&
+                this.getDenominator()==((Fraction)obj).getDenominator();
+    }
+
+    @Override
+    public int hashCode() {
+        return denominator * 13 + numerator;
     }
 
     @Override
