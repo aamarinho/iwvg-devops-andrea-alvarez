@@ -10,12 +10,19 @@ class FractionTest {
     private Fraction fraction;
     private Fraction fraction2;
     private Fraction fraction3;
+    private Fraction fraction4;
 
     @BeforeEach
     void before(){
         fraction = new Fraction(2,5);
         fraction2 = new Fraction(1,3);
         fraction3 = new Fraction(1,3);
+        fraction4 = new Fraction(4,3);
+    }
+
+    @Test
+    void testFraction(){
+        assertEquals(new Fraction(1,1),new Fraction());
     }
 
     @Test
@@ -25,19 +32,38 @@ class FractionTest {
     }
 
     @Test
+    void testSetNumerator(){
+        fraction.setNumerator(3);
+        assertEquals(3,fraction.getNumerator());
+    }
+
+    @Test
     void testGetDenominator(){
         assertEquals(5,fraction.getDenominator());
         assertEquals(3,fraction2.getDenominator());
     }
 
     @Test
+    void testSetDenominator(){
+        fraction.setDenominator(10);
+        assertEquals(10,fraction.getDenominator());
+    }
+
+    @Test
+    void testDecimal(){
+        assertEquals(0.4,fraction.decimal());
+    }
+
+    @Test
     void testIsProper(){
         assertTrue(fraction.isProper());
+        assertFalse(fraction4.isProper());
     }
 
     @Test
     void testIsImproper(){
         assertFalse(fraction.isImproper());
+        assertTrue(fraction4.isImproper());
     }
 
     @Test

@@ -13,6 +13,7 @@ import java.util.List;
 class UserTest {
 
     private User user;
+    private User user2;
     private List<Fraction> fractionsTest;
     private List<Fraction> fractions;
 
@@ -25,6 +26,12 @@ class UserTest {
         fractionsTest = new ArrayList<>();
         fractionsTest.add(new Fraction(1,3));
         fractionsTest.add(new Fraction(2,5));
+        user2=new User(null,null,null,new ArrayList<>());
+    }
+
+    @Test
+    void testUser(){
+        assertEquals(0,new User().getFractions().size());
     }
 
     @Test
