@@ -93,7 +93,7 @@ class FractionTest {
     void testEquals(){
         assertEquals(fraction2, fraction3);
         assertNotEquals(fraction2, fraction);
-        assertNotEquals(null, fraction);
+        assertEquals(false,fraction.equals(null));
     }
 
     @Test
