@@ -24,4 +24,11 @@ public class Searches {
                 .flatMap(user->user.getFractions().stream())
                 .map(Fraction::decimal).findFirst().orElse(null);
     }
+
+    public Fraction findFractionMultiplicationByUserFamilyName(String familyName){
+        return new UsersDatabase().findAll()
+                .filter(user->user.getFamilyName().equals(familyName))
+                .flatMap(user->user.getFractions().stream())
+                .reduce(new Fraction(1,1),Fraction::multiply);
+    }
 }

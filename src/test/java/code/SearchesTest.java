@@ -3,11 +3,9 @@ package code;
 import es.upm.miw.iwvg_devops.code.Fraction;
 import es.upm.miw.iwvg_devops.code.Searches;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.BeforeEach;
 
 import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
 class SearchesTest {
@@ -29,5 +27,11 @@ class SearchesTest {
     void testFindFirstDecimalFractionByUserName(){
         assertEquals(0,new Searches().findFirstDecimalFractionByUserName("Antonio"));
         assertEquals(2,new Searches().findFirstDecimalFractionByUserName("Ana"));
+    }
+
+    @Test
+    void findFractionMultiplicationByUserFamilyName(){
+        assertEquals(new Fraction(12,-240),new Searches().findFractionMultiplicationByUserFamilyName("López"));
+        assertEquals(new Fraction(0,1),new Searches().findFractionMultiplicationByUserFamilyName("Fernandez"));
     }
 }
