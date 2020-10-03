@@ -20,8 +20,14 @@ class SearchesTest {
     }
 
     @Test
-    void testHigherFraction(){
-        Fraction f = new Fraction(2,1);
-        assertEquals(f,new Searches().findHighestFraction());
+    void testFindHighestFraction(){
+        Fraction highest = new Fraction(2,1);
+        assertEquals(highest,new Searches().findHighestFraction());
+    }
+
+    @Test
+    void testFindFirstDecimalFractionByUserName(){
+        assertEquals(0,new Searches().findFirstDecimalFractionByUserName("Antonio"));
+        assertEquals(2,new Searches().findFirstDecimalFractionByUserName("Ana"));
     }
 }
