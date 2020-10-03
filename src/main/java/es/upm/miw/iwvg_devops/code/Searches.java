@@ -1,7 +1,5 @@
 package es.upm.miw.iwvg_devops.code;
 
-import org.apache.logging.log4j.LogManager;
-
 import java.util.stream.Stream;
 
 public class Searches {
@@ -12,5 +10,11 @@ public class Searches {
                 .flatMap(user-> user.getFractions().stream())
                 .filter(Fraction::isImproper)
                 .map(Fraction::decimal);
+    }
+
+    public Fraction findHighestFraction(){
+        return new UsersDatabase().findAll()
+                .flatMap(user->user.getFractions().stream())
+                .reduce(new Fraction(1,1),Fraction::isHigher);
     }
 }
