@@ -1,5 +1,6 @@
 package code;
 
+import es.upm.miw.iwvg_devops.code.Fraction;
 import es.upm.miw.iwvg_devops.code.Searches;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
@@ -16,5 +17,11 @@ class SearchesTest {
         assertEquals(List.of(2.0, 4.0/3), new Searches()
                 .findDecimalImproperFractionByUserName("Ana")
                 .collect(Collectors.toList()));
+    }
+
+    @Test
+    void testHigherFraction(){
+        Fraction f = new Fraction(2,1);
+        assertEquals(f,new Searches().findHighestFraction());
     }
 }

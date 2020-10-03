@@ -86,6 +86,18 @@ public class Fraction {
         return new Fraction(f.getDenominator()* this.getNumerator(),f.getNumerator()* this.getDenominator());
     }
 
+    public Fraction isHigher(Fraction f){
+        Fraction toRet = this;
+        if(this.decimal()>f.decimal()){
+            return toRet;
+        } else{
+            if(f.getDenominator()!=0) {
+                toRet = f;
+            }
+        }
+        return toRet;
+    }
+
     @Override
     public boolean equals(Object obj) {
         if(obj==null){

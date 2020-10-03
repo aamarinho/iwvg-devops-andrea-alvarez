@@ -90,6 +90,12 @@ class FractionTest {
     }
 
     @Test
+    void testIsHigher(){
+        assertEquals(fraction4,fraction.isHigher(fraction4));
+        assertEquals(fraction4,fraction4.isHigher(fraction2));
+    }
+
+    @Test
     void testEquals(){
         assertEquals(fraction2, fraction3);
         assertNotEquals(fraction2, fraction);
