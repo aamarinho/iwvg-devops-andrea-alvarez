@@ -59,23 +59,23 @@ public class Fraction {
         return (double) numerator / denominator;
     }
 
-    public boolean isProper(){
+    public boolean isProper() {
         return this.getNumerator() < this.getDenominator();
     }
 
-    public boolean isImproper(){
+    public boolean isImproper() {
         return this.getNumerator() > this.getDenominator();
     }
 
-    public boolean isEquivalent(Fraction f){
+    public boolean isEquivalent(Fraction f) {
         return this.getNumerator() * f.getDenominator() == this.getDenominator() * f.getNumerator();
     }
 
-    public Fraction add(Fraction f){
-        int denominatorAux=this.getDenominator()*f.getDenominator();
-        int numerator1=(denominatorAux/this.getDenominator())*this.getNumerator();
-        int numerator2=(denominatorAux/f.getDenominator())*f.getNumerator();
-        return new Fraction(numerator1+numerator2,denominatorAux);
+    public Fraction add(Fraction f) {
+        int denominatorAux = this.getDenominator() * f.getDenominator();
+        int numerator1 = (denominatorAux / this.getDenominator()) * this.getNumerator();
+        int numerator2 = (denominatorAux / f.getDenominator()) * f.getNumerator();
+        return new Fraction(numerator1 + numerator2, denominatorAux);
     }
 
     public Fraction multiply(Fraction f) {
@@ -83,15 +83,15 @@ public class Fraction {
     }
 
     public Fraction divide(Fraction f) {
-        return new Fraction(f.getDenominator()* this.getNumerator(),f.getNumerator()* this.getDenominator());
+        return new Fraction(f.getDenominator() * this.getNumerator(), f.getNumerator() * this.getDenominator());
     }
 
-    public Fraction isHigher(Fraction f){
+    public Fraction isHigher(Fraction f) {
         Fraction toRet = this;
-        if(this.decimal()>f.decimal()){
+        if (this.decimal() > f.decimal()) {
             return toRet;
-        } else{
-            if(f.getDenominator()!=0) {
+        } else {
+            if (f.getDenominator() != 0) {
                 toRet = f;
             }
         }
@@ -100,10 +100,10 @@ public class Fraction {
 
     @Override
     public boolean equals(Object obj) {
-        if(obj==null){
+        if (obj == null) {
             return false;
         }
-        return this.hashCode()==obj.hashCode();
+        return this.hashCode() == obj.hashCode();
     }
 
     @Override
